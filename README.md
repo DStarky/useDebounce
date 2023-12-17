@@ -11,5 +11,7 @@
 ```javascript
 const [searchValue, setSearchValue] = useState('');
 const debouncedSearchValue = useDebounce(searchValue, 500);
-const searchHandler = () => getInfoFromServer(debouncedSearchValue);
+  useEffect(() => {
+    getDataFromServer(debouncedSearchValue);
+  }, [debouncedSearchValue]);
 ```
